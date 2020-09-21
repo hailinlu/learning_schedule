@@ -25,3 +25,10 @@
     // 提交代码到远程仓库(需要输入用户名和密码)
     git push -u origin master
 ```
+
+```javascript
+    // 额外的一些git命令
+    git status // 显示代码库状态
+    git log // 打印提交信息
+    git diff // 对比当前状态和版本库中状态的变化
+```
