@@ -1,0 +1,27 @@
+## git 常用指令集
+
+    2020年9月21日，开始记录每日随笔，写完想要上传至github，突然发现我已经习惯了使用小乌龟(TortoiseGit)了，而对于git的命令行方式确是一窍不通，总感觉欠缺点什么，所以又写下了这篇随笔。
+
+```javascript
+    // 设置基本信息
+    git config --global user.name "your name"
+    git config --global user.email "your email"
+
+    // 切换到需要上传的目录下，初始化本地仓库
+    git init
+
+    // 添加文件和目录追踪
+    git add 文件名/目录名
+
+    // 添加提交信息
+    git commit -m "提交信息"
+
+    // 关联代码仓库到github
+    git remote add origin "github代码仓库的url地址"
+
+    // 将远程仓库代码拉取到本地
+    git pull origin master
+
+    // 提交代码到远程仓库(需要输入用户名和密码)
+    git push -u origin master
+```
