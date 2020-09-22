@@ -54,4 +54,12 @@
 
     // 新方法
     Reflect.get(object,"baz",myReceiver); // 8
+
+    // 感觉有点像apply 或者 call 的 原理，替换了this的作用域
+    // examples
+    let temp = {foo:1 ,say(){return this.foo}};
+    let receiver = {foo:2}
+
+    temp.say.apply(receiver);
+    temp.say.call(receiver);
 ```
