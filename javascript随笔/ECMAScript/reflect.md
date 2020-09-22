@@ -25,3 +25,33 @@
     // 新用法
     Reflect.has("foo",myObject);
 ```
+
+### Reflect.get(target,name,receiver)
+
+```javascript
+    let object = {
+        foo:1,
+        bar:2,
+        get baz(){
+            return this.bar + this.foo
+        }
+    }
+
+    // 老方法
+    object.foo; 
+    object["bar"];
+    object.baz;
+
+    // 新方法
+    Reflect.get(object,"foo");
+    Reflect.get(object,"bar");
+    Reflect.get(object,"baz");
+
+    let myReceiver = {
+        foo:4,
+        bar:4
+    }
+
+    // 新方法
+    Reflect.get(object,"baz",myReceiver); // 8
+```
