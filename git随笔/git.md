@@ -41,7 +41,13 @@
     每次提交代码总要输入用户名密码，太麻烦了，那怎么办呢，哈哈，没错，我们可以记住用户名密码。
 
 ```javascript
+    // 全局配置
     git config --global credential.helper cache  // 设置记住密码(15分钟)
     git config --global credential.helper "cache --timeout=3600"  // 设置记住密码(1小時)
     git config --global credential.helper store  // 设置永久记住密码
+    
+    // 针对单个项目配置，可以修改.git/config,配置如下
+    [credential]
+	    helper=store
+	    username = "替换你的用户名"
 ```
