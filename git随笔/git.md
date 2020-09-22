@@ -31,4 +31,7 @@
     git status // 显示代码库状态
     git log // 打印提交信息
     git diff // 对比当前状态和版本库中状态的变化
+
+    // modified at 2020/09/22
+    git clone github代码仓库url
 ```
