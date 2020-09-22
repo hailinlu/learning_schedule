@@ -8,12 +8,16 @@
     ctrl + P // 转到文件
     ctrl + W // 关闭编辑窗口
     ctrl + T // 转到工作区的符号
+    ctrl + /  // 注释/取消注释 
     ctrl + shift + P // 顯示所有命令
     ctrl + left/right // 移动光标到前一个/后一个单词 
     ctrl + shift + left/right // 逐个选择文本
-    ctrl + /  // 注释/取消注释 
+    ctrl + shift + [ // 折叠代码块
+    ctrl + shift + ] // 展开代码块
+    ctrl + shift + k // 删除当前行
+    ctrl + K ctrl + 0 // 折叠所有代码块
+    ctrl + K ctrl + J // 展开所有代码块
     alt + shift + up/down // 向上或向下复制当前行 
-    shift + ctrl + k // 删除当前行
     alt + up/down // 移动当前行
     alt + ctrl + up/down // 复制游标
     alt + left/right // 切换文件
