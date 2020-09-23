@@ -29,6 +29,9 @@
     // 安装typescript
     npm i -g typescript
 
+    // 安装yarn
+    npm i -g yarn
+
     // 卸载旧版vue脚手架
     npm uninstall vue-cli -g
 

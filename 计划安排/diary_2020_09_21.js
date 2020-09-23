@@ -41,18 +41,18 @@ function printDiarySchedule() {
 
   console.log("");
   console.log(
-    `                       2020/09/23 计划有变，由于前一天的课时知识点密集，
+    `                       2020/09/23 - 2020/09/24 计划有变，由于前一天的课时知识点密集，
                             因此需要更多时间消化                         `
   );
 
   console.log("");
   console.log(
-    "                       2020/09/24 学习vue3开课吧课程(课时2)                         "
+    "                       2020/09/25 学习vue3开课吧课程(课时2)                         "
   );
 
   console.log("");
   console.log(
-    "                       2020/09/25 回顾vue3所学知识点，整理笔记                     "
+    "                       2020/09/26 回顾vue3所学知识点，整理笔记                     "
   );
 
   console.log("\n");
