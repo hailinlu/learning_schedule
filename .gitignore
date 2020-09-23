@@ -1,2 +1,4 @@
 **/node_modules/
 **/package-lock.json
+/examples/vue-next/play_plane/dist/*.png
+/examples/vue-next/play_plane/dist/*.jpg
