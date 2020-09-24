@@ -55,6 +55,24 @@ function printDiarySchedule() {
     "                       2020/09/26 回顾vue3所学知识点，整理笔记                     "
   );
 
+  console.log("");
+  console.log(
+    "                       2020/09/27 由简入繁，先从mini-vue开始，奠定读vue3源码的基础                    "
+  );
+
+  console.log("");
+  console.log(
+    "                       (1) mini-vue暂定3天时间消化，一天时间总结(截止到30号)                  "
+  );
+  console.log(
+    "                       (2) vue3的源码解读会相对滞后，大概要半个月后开始(哈哈，国庆还是要好好过的)                   "
+  );
+
+  console.log("");
+  console.log(
+    "                       2020/10/01 - 2020/10/08 基于所学，发散思维，自己写个小游戏                   "
+  );
+
   console.log("\n");
 }
 
