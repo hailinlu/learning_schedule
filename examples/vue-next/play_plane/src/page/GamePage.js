@@ -39,68 +39,76 @@ function useCreateEnermyInfo() {
 }
 
 function useCreateBullets() {
-    const bullets = reactive([{ x: 329, y: 500, width: 61, height: 99 }])
-    return { bullets }
+    const bullets = reactive([])
+
+    const addBulltes = (info) => {
+        bullets.push(info);
+    }
+
+    return { bullets, addBulltes }
+}
+
+function useFighting(planeInfo, enermys, bullets, emit) {
+
+    let enermyInterval = setInterval(() => {
+        enermys.push({ x: Math.ceil(Math.random() * 500), y: 0, width: 308, height: 207 })
+    }, 1000);
+
+    const handleTicker = () => {
+        enermys.forEach((info) => {
+            info.y++;
+        })
+
+        enermys.forEach((info, enermyIndex) => {
+            if (hitObjectfunc(info, planeInfo)) {
+                emit("changePage", "EndPage");
+            }
+
+            bullets.forEach((binfo, bindex) => {
+                if (hitObjectfunc(info, binfo)) {
+                    enermys.splice(enermyIndex, 1);
+                    bullets.splice(bindex, 1)
+                }
+            })
+        })
+
+
+        bullets.forEach(info => {
+            info.y--;
+        })
+    }
+
+    game.ticker.add(handleTicker);
+
+    onMounted(() => {
+        game.ticker.add(handleTicker);
+    })
+
+    onUnmounted(() => {
+        game.ticker.remove(handleTicker);
+        clearInterval(enermyInterval)
+    })
 }
 
 export default defineComponent({
-    setup(props, ctx) {
+    setup(props, { emit }) {
         const { planeInfo } = useCreatePlaneInfo();
 
         const { enermys } = useCreateEnermyInfo();
 
-        const { bullets } = useCreateBullets();
+        const { bullets, addBulltes } = useCreateBullets();
 
-        let enermyInterval = setInterval(() => {
-            enermys.push({ x: Math.ceil(Math.random() * 500), y: 0, width: 308, height: 207 })
-        }, 1000);
-
-        let bulletInterval = setInterval(() => {
-            bullets.push({ x: planeInfo.x + planeInfo.width / 2, y: planeInfo.y, width: 61, height: 99 })
-        }, 1000);
-
-        const handleTicker = () => {
-            enermys.forEach((info) => {
-                info.y++;
-            })
-
-            enermys.forEach(info => {
-                if (hitObjectfunc(info, planeInfo)) {
-                    ctx.emit("changePage", "EndPage");
-                }
-
-                let index = enermys.indexOf(info);
-
-                bullets.forEach(binfo => {
-                    if (hitObjectfunc(info, binfo)) {
-                        enermys.splice(index, 1);
-                    }
-                })
-            })
-
-
-            bullets.forEach(info => {
-                info.y--;
-            })
+        const onAttack = (params) => {
+            addBulltes({ x: params.x + planeInfo.width / 2, y: params.y, width: 61, height: 99 })
         }
 
-        game.ticker.add(handleTicker);
-
-        onMounted(() => {
-            game.ticker.add(handleTicker);
-        })
-
-        onUnmounted(() => {
-            game.ticker.remove(handleTicker);
-            clearInterval(enermyInterval);
-            clearInterval(bulletInterval);
-        })
-
+        useFighting(planeInfo, enermys, bullets, emit);
 
         return {
             planeInfo,
             enermys,
-            bullets
+            bullets,
+            onAttack
         }
     },
     render(ctx) {
@@ -115,6 +123,6 @@ export default defineComponent({
                 return h(Bullet, { x: info.x, y: info.y })
             })
         }
-        return h("Container", [h(Map), h(Plane, { x: ctx.planeInfo.x, y: ctx.planeInfo.y }), ...createEnermyPlane(), ...createBulltes()])
+        return h("Container", [h(Map), h(Plane, { x: ctx.planeInfo.x, y: ctx.planeInfo.y, onAttack: ctx.onAttack }), ...createEnermyPlane(), ...createBulltes()])
     }
 })

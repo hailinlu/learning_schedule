@@ -5,6 +5,17 @@ export default defineComponent({
     props: ["x", "y"],
     setup(props, ctx) {
         const { x, y } = toRefs(props);
+
+        addEventListener("keydown", (e) => {
+            switch (e.code) {
+                case "Space":
+                    ctx.emit("attack", { x: x.value, y: y.value })
+                    break;
+                default:
+                    break;
+            }
+        })
+
         return {
             x,
             y
