@@ -30,6 +30,8 @@
 
 废话不多说，下面就总结一下手撸飞机大战的一些知识点吧。
 
+<!-- modified at 2020/09/26  -->
+
 ```javascript
 // runtime-canvas/index.js
 import { createRenderer } from "@vue/runtime-core";
