@@ -70,7 +70,7 @@ function printDiarySchedule() {
 
   console.log("");
   console.log(
-    "                       2020/10/01 - 2020/10/08 基于所学，发散思维，自己写个小游戏                   "
+    "                       2020/10/01 - 2020/10/08 基于所学，发散思维，自己写个小游戏(未实现，事情较多)                  "
   );
 
   console.log("\n");
