@@ -6,7 +6,7 @@
 created at 2020/09/21
 -->
 
-```javascript
+```
     //  windows powershell
     mkdir 目录名  //创建文件夹
 

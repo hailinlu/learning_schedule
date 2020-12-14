@@ -2,7 +2,7 @@
 
     记录一些常用的npm安装，避免重新安装过程中会遗漏一些常用的库，持续更新中。。。
 
-```javascript
+```
     // 安装nvm node管理工具 (https://github.com/coreybutler/nvm-windows/releases)
 
     // 安装node

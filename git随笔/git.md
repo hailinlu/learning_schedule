@@ -2,7 +2,7 @@
 
     2020年9月21日，开始记录每日随笔，写完想要上传至github，突然发现我已经习惯了使用小乌龟(TortoiseGit)了，而对于git的命令行方式确是一窍不通，总感觉欠缺点什么，所以又写下了这篇随笔。
 
-```javascript
+```
     // 设置基本信息
     git config --global user.name "your name"
     git config --global user.email "your email"
@@ -30,7 +30,7 @@
     git push -u origin master
 ```
 
-```javascript
+```
     // 额外的一些git命令
     git status // 显示代码库状态
     git log // 打印提交信息
@@ -44,7 +44,7 @@
 
     每次提交代码总要输入用户名密码，太麻烦了，那怎么办呢，哈哈，没错，我们可以记住用户名密码。
 
-```javascript
+```
     // 全局配置
     git config --global credential.helper cache  // 设置记住密码(15分钟)
     git config --global credential.helper "cache --timeout=3600"  // 设置记住密码(1小時)
