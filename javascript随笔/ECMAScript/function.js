@@ -28,7 +28,15 @@
     console.log(foo.name);
 }
 
-// 尾调用 函数的最后一步是调用另一个函数
-{
+// 尾调用 函数的最后一步是调用另一个函数 尾调用优化可以节省内存
 
+// 尾递归:尾调用自身
+{
+    // 阶乘函数
+    function factorial(n){
+        if(n === 1) return 1;
+        return  n * factorial(n-1);
+    }
+
+    console.log(factorial(5));
 }
