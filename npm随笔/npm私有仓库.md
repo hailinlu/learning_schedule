@@ -22,5 +22,11 @@
     cnpm install @zdpower/zdpower-ui;
 ```
 
+```shell
+    ## package.json 包含多源模块
+    ## 修改 .npmrc或者.cnpmrc等文件,在文件后面添加下列语句
+    @zdpower:registry=https://www.lhlchina.com/registry
+```
+
 
 
