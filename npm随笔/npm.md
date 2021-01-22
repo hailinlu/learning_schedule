@@ -36,4 +36,7 @@
 
     ## 安装vue3脚手架
     cnpm install -g @vue/cli
+    
+    ## 切换源工具
+    npm i -g nrm
 ```
