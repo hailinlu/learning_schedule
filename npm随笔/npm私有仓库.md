@@ -11,6 +11,8 @@
     registryHost:"www.lhlchina.com/registry" 
 ```
 
+[verdaccio搭建私有仓库](https://alili.tech/archive/9713e794/)
+
 ### 自定义组件实例
 
 [参考项目](https://github.com/zuley/vue-color-picker)
@@ -27,6 +29,8 @@
     ## 修改 .npmrc或者.cnpmrc等文件,在文件后面添加下列语句
     @zdpower:registry=https://www.lhlchina.com/registry
 ```
+
+
 
 
 
